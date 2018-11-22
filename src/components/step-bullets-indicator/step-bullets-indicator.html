@@ -1,0 +1,7 @@
+<div *ngIf="correctParams()" class="horizontal-scroll" [ngClass]="(showNumbers)?'with-counter':''" id="container">
+  <ol class="step-container" [ngClass]="(bulletsList.length>5)?'number-bullets-'+bulletsList.length:''"
+      [ngStyle]="currentStyle">
+    <li *ngFor="let item of bulletsList; let i=index;" class="step" [ngClass]="((selectedIndex-1)===i?'active':'')">
+      <span [ngClass]="((selectedIndex-1)<i?'future':'')">{{item}}</span></li>
+  </ol>
+</div>

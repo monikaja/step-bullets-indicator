@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Ionic Steps Bullets Indicator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form *ngIf="formData" [formGroup]="formData" novalidate>
+    <ion-grid class="input-container">
+      <ion-list class="form-input-type">
+        <ion-item>
+          <ion-label stacked>Number of bullets (from 3 to 15)</ion-label>
+          <ion-input type="text" name="bulletListSize" formControlName="bulletListSize"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Active bullet (from 1 to 15)</ion-label>
+          <ion-input type="text" name="selectedIndex" formControlName="selectedIndex"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Show numbers</ion-label>
+          <ion-toggle color="primary" name="showNumbers" formControlName="showNumbers"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <button ion-button color="primary" (click)="updateTool()" block round>Update</button>
+        </ion-item>
+      </ion-list>
+    </ion-grid>
+  </form>
+  <step-bullets-indicator [bulletsList]="bulletsList" [selectedIndex]="selectedIndex" [showNumbers]="showNumbers"></step-bullets-indicator>
+</ion-content>

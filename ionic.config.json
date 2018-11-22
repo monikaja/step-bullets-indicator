@@ -1,0 +1,7 @@
+{
+  "name": "steps-bullets-indicator",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
